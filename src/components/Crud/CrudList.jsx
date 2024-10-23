@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
-import CrudListItems from './CrudListItems';
-import Loader from '../UI/Loader';
-import GrayBG from '../UI/GrayBG';
+import { useSelector } from "react-redux";
+import CrudListItems from "./CrudListItems";
+import Loader from "../UI/Loader";
+import GrayBG from "../UI/GrayBG";
 
 export const CrudList = ({ className, onShowModal, onHandleEdit }) => {
   const { status } = useSelector((state) => state.crud);
@@ -24,7 +24,7 @@ export const CrudList = ({ className, onShowModal, onHandleEdit }) => {
           />
         </tbody>
       </table>
-      {status === 'loading' ? (
+      {status === "loading" ? (
         <GrayBG>
           <Loader className="inline-block absolute top-1/2 left-1/2 z-50" />
         </GrayBG>

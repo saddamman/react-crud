@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
-import { CrudList } from './CrudList';
-import CrudForm from './CrudForm';
-import CommanModal from '../modal/CommanModal';
+import { useRef, useState } from "react";
+import { CrudList } from "./CrudList";
+import CrudForm from "./CrudForm";
+import CommanModal from "../modal/CommanModal";
 
 function Crud() {
   const modalRef = useRef();
@@ -24,10 +24,7 @@ function Crud() {
 
   return (
     <>
-      <div>
-        <h2 className="text-3xl text-center p-4 mb-3 font-semibold">
-          React reduc crud web app.
-        </h2>
+      <div className="pt-10">
         <button
           type="button"
           className="bg-pink-500 text-white text-sm mx-auto block mb-5"

@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { validateEmail, validateName } from '../../utils/validations';
-import { postUserDetails, updateUserDetails } from '../../features/crudAction';
-import { generateRandomId } from '../../utils/generateRandomId';
-import { toast } from 'react-toastify';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { validateEmail, validateName } from "../../lib/utils/validations";
+import { postUserDetails, updateUserDetails } from "../../features/crudAction";
+import { generateRandomId } from "../../lib/utils/generateRandomId";
+import { toast } from "react-toastify";
 
 function CrudForm({ onClick, updateItem }) {
   const dispatch = useDispatch();
   const { userDataList } = useSelector((state) => state.crud);
-  const [userInput, setUserInput] = useState({ name: '', email: '' });
+  const [userInput, setUserInput] = useState({ name: "", email: "" });
 
   const [errors, setErrors] = useState({
-    name: '',
-    email: '',
+    name: "",
+    email: "",
   });
 
   useEffect(() => {
@@ -22,11 +22,11 @@ function CrudForm({ onClick, updateItem }) {
   }, [updateItem]);
 
   const getValidationFunction = (name) => {
-    return name === 'name'
+    return name === "name"
       ? validateName
-      : name === 'email'
+      : name === "email"
       ? validateEmail
-      : () => ({ isValid: true, error: '' });
+      : () => ({ isValid: true, error: "" });
   };
 
   const handleChange = (e) => {
@@ -39,7 +39,7 @@ function CrudForm({ onClick, updateItem }) {
     const { isValid, error } = getValidationFunction(name)(value);
     setErrors((prevErrors) => ({
       ...prevErrors,
-      [name]: isValid ? '' : error,
+      [name]: isValid ? "" : error,
     }));
     return isValid;
   };
@@ -57,8 +57,8 @@ function CrudForm({ onClick, updateItem }) {
   const onSumbitForm = (e) => {
     e.preventDefault();
     if (!validateForm()) {
-      toast.error('Please fill all input fields!', {
-        toastId: 'errorInputs',
+      toast.error("Please fill all input fields!", {
+        toastId: "errorInputs",
         autoClose: 1000,
       });
       return;
@@ -68,21 +68,21 @@ function CrudForm({ onClick, updateItem }) {
     } else if (checkEmailAlreadyExist(userInput.email)) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        email: 'Email already exists!',
+        email: "Email already exists!",
       }));
       return;
     } else {
       const userId = generateRandomId();
       dispatch(postUserDetails({ id: userId, ...userInput }));
     }
-    console.log('Form submitted successfully!');
+    console.log("Form submitted successfully!");
     onClick();
   };
 
   return (
     <>
       <header className="mb-4">
-        <b>{updateItem ? 'Update User Details' : 'Add User Deatils'} </b>
+        <b>{updateItem ? "Update User Details" : "Add User Deatils"} </b>
       </header>
       <form onSubmit={onSumbitForm}>
         <div className="mb-3 space-x-4 flex items-center justify-center">
@@ -124,7 +124,7 @@ function CrudForm({ onClick, updateItem }) {
           </div>
         </div>
         <button type="submit" className="bg-pink-600 text-white text-sm">
-          {updateItem ? 'Update' : 'Submit'}
+          {updateItem ? "Update" : "Submit"}
         </button>
       </form>
     </>

@@ -1,17 +1,17 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const postUserDetails = createAsyncThunk(
-  'crud/postUserDetails',
+  "crud/postUserDetails",
   async (user) => {
-    const response = await fetch('http://localhost:5000/users', {
-      method: 'POST',
+    const response = await fetch("http://localhost:3000/users", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
     if (!response.ok) {
-      throw new Error('Failed to add new user. Please try again !');
+      throw new Error("Failed to add new user. Please try again !");
     }
 
     const data = await response.json();
@@ -20,12 +20,12 @@ export const postUserDetails = createAsyncThunk(
 );
 
 export const getUserDetails = createAsyncThunk(
-  'crud/getUserDetails',
+  "crud/getUserDetails",
   async () => {
-    const response = await fetch('http://localhost:5000/users', {
-      method: 'GET',
+    const response = await fetch("http://localhost:3000/users", {
+      method: "GET",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
 
@@ -34,12 +34,12 @@ export const getUserDetails = createAsyncThunk(
   }
 );
 export const updateUserDetails = createAsyncThunk(
-  'crud/updateUserDetails',
+  "crud/updateUserDetails",
   async (user) => {
-    const response = await fetch(`http://localhost:5000/users/${user.id}`, {
-      method: 'PUT',
+    const response = await fetch(`http://localhost:3000/users/${user.id}`, {
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
     });
@@ -49,12 +49,12 @@ export const updateUserDetails = createAsyncThunk(
 );
 
 export const deleteUserDetails = createAsyncThunk(
-  'crud/deleteUserDetails',
+  "crud/deleteUserDetails",
   async (user) => {
-    const response = await fetch(`http://localhost:5000/users/${user.id}`, {
-      method: 'DELETE',
+    const response = await fetch(`http://localhost:3000/users/${user.id}`, {
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     });
 

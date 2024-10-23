@@ -1,13 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import { getUserDetails, deleteUserDetails } from '../../features/crudAction';
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getUserDetails, deleteUserDetails } from "../../features/crudAction";
 
 function CrudListItems({ onShowModal, onHandleEdit }) {
   const dispatch = useDispatch();
   const { userDataList } = useSelector((state) => state.crud);
+  console.log(userDataList);
   useEffect(() => {
     dispatch(getUserDetails());
-  }, []);
+  }, [dispatch]);
   const handleEdit = (currentEditItem) => {
     onShowModal();
     onHandleEdit(currentEditItem);

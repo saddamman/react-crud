@@ -1,19 +1,14 @@
 {
   "users": [
     {
-      "id": "m23o3dykvvgso9kkw",
-      "name": "Ranjan Sharma",
-      "email": "ranjan@gmail.com"
+      "id": "m8cgz5h0tezsci0b4",
+      "name": "Raju sharma",
+      "email": "shahid@gmail.com"
     },
     {
-      "id": "m23ob7p81mrf31puy",
-      "name": "Amar kumar",
-      "email": "amar@gmail.com"
-    },
-    {
-      "id": "m2bl55s6tb58q7dj2",
+      "id": "m8ch0yizlxsq3dtri",
       "name": "Saddam Ansari",
-      "email": "sadadad@gmail.com"
+      "email": "saddam@gmail.com"
     }
   ]
 }

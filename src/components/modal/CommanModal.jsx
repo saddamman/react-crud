@@ -1,13 +1,13 @@
-import { forwardRef, useImperativeHandle, useState } from 'react';
-import { createPortal } from 'react-dom';
-import ModalBackDrop from './ModalBackDrop';
-import { Card } from '../UI/Card';
-import closeIcon from '../../assets/close-icon.svg';
+import { forwardRef, useImperativeHandle, useState } from "react";
+import { createPortal } from "react-dom";
+import ModalBackDrop from "./ModalBackDrop";
+import { Card } from "../UI/Card";
+import closeIcon from "../../assets/close-icon.svg";
 
 const CommanModal = forwardRef(({ children }, ref) => {
   const [isOpen, setIsOpen] = useState(false);
-  const modalRoot = document.getElementById('modal-root');
-  const modalBackdrop = document.getElementById('modal-backdrop');
+  const modalRoot = document.getElementById("modal-root");
+  const modalBackdrop = document.getElementById("modal-backdrop");
 
   useImperativeHandle(ref, () => ({
     openModal: () => setIsOpen(true),
@@ -23,7 +23,7 @@ const CommanModal = forwardRef(({ children }, ref) => {
         modalBackdrop
       )}
       {createPortal(
-        <div className="z-modalZIndex md:w-[500px] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="z-modalZIndex w-11/12 md:w-[500px] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <button
             type="button"
             className="p-2 rounded-full absolute right-3 top-3 bg-pink-500"
@@ -40,6 +40,6 @@ const CommanModal = forwardRef(({ children }, ref) => {
     </>
   );
 });
-CommanModal.displayName = 'CommanModal';
+CommanModal.displayName = "CommanModal";
 
 export default CommanModal;

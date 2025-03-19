@@ -20,7 +20,7 @@ const Header = () => {
             <ul className="flex flex-wrap gap-3">
               <Link to="/dashboard">Dashbaord</Link>
               <Link to="/">Crud</Link>
-              <Link to="/about">About Us</Link>
+              <Link to="/accordion">Accordion</Link>
               <Link to="/contact">Contact us</Link>
             </ul>
           </nav>

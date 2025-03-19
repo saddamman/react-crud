@@ -2,9 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root";
 import ErrorLayout from "../layouts/ErrorLayout";
 import Home from "../pages/Home";
-import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Dashbaord from "../pages/Dashbaord";
+import Accordion from "../components/Accordion";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +21,8 @@ const router = createBrowserRouter([
         element: <Dashbaord />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/accordion",
+        element: <Accordion />,
       },
       {
         path: "/contact",

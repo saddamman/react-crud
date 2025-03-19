@@ -9,12 +9,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-  const { loginWithRedirect, user, logout, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
 
   return (
     <header className="border-b border-slate-200">
       <div className="container">
-        <div className="flex items-center justify-between py-3 gap-10">
+        <div className="flex justify-between gap-10 items-center py-3">
           <Logo />
           <nav className="navigation">
             <ul className="flex flex-wrap gap-3">
